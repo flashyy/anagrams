@@ -1,6 +1,5 @@
-// let _ = require('lodash');
-
-let a = 'brio';
+"use strict";
+let _ = require('lodash');
 
 function change(a, x, y) {
     let b = [];
@@ -15,10 +14,6 @@ function change(a, x, y) {
     }
     return b;
 }
-
-let result = change(a, 0, 1);
-
-console.log(result);
 
 // function permutation(a, m, len) {
 //     let tem = '';
@@ -38,3 +33,6 @@ console.log(result);
 //     }
 // }
 
+module.exports = {
+    change: change
+};
