@@ -3,36 +3,46 @@ let _ = require('lodash');
 
 function change(a, x, y) {
     let b = [];
-    for(let i=0;i<a.length;i++) {
-        if(i === x) {
+    for (let i = 0; i < a.length; i++) {
+        if (i === x) {
             b.push(a[y]);
-        }else if(i === y) {
+        } else if (i === y) {
             b.push(a[x]);
-        }else {
+        } else {
             b.push(a[i]);
         }
     }
     return b;
 }
 
-// function permutation(a, m, len) {
-//     let tem = '';
-//
-//     if (m === len) {
-//         for (let i = 0; i < m; i++) {
-//             console.log(a[i]);
-//         }
-//     }
-//
-//     else {
-//         for (let j = m; j <= m; j++) {
-//
-//             permutation(a, m + 1, len);
-//         }
-//
-//     }
-// }
+function division(a) {
+    return _.split(a, '');
+}
+
+
+function permutation(a, m, len) {
+    if (m === len) {
+        // console.log('zzzzzzzz');
+        console.log(a);
+        return a;
+    }
+
+    else {
+        for (let j = m; j <= len; j++) {
+            let b = change(a, j, m);
+            permutation(b, m + 1, len);
+            let c = change(b, j, m);
+        }
+        return 0;
+    }
+}
+
+let a = division('bior');
+let c = permutation(a, 0, 3);
+console.log(c);
+
 
 module.exports = {
-    change: change
+    change: change,
+    division: division
 };
