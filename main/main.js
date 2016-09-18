@@ -22,7 +22,6 @@ function division(a) {
 
 function permutation(a, m, len) {
     if (m === len) {
-        // console.log('zzzzzzzz');
         console.log(a);
         return a;
     }
